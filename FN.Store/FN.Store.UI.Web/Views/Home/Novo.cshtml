@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Novo";
+}
+
+<h2>Adicionar Cliente</h2>
+
+@Html.ValidationSummary()
+
+<form class="col-sm-6" method="post" action="@Url.Action("Salvar")">
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nome" id="nome">
+    </div>
+
+
+    <div class="form-group">
+        <label for="idade">Idade</label>
+        <input type="number" class="form-control" name="idade" id="idade">
+    </div>
+
+    <div class="form-group">
+        <label for="sexo">Sexo</label>
+        <select class="form-control" name="sexo" id="sexo">
+            <option value="1">Masculino</option>
+            <option value="0">Feminino</option>
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

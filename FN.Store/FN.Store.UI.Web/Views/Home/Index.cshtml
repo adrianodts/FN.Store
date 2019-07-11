@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FN.Store.Domain.Entities.Cliente>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listagem de Clientes</h2>
+
+
+<div>
+
+    <a href="@Url.Action("Novo")"  class="btn btn-dark">Adicionar</a>
+</div>
+
+
+<div class="row">
+    <table class="table table-responsive">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>Telefones</th>
+                <th>Data Cadastro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr scope="row">
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Nome</td>
+                    <td>@cliente.Idade</td>
+                    <td>@cliente.Sexo</td>
+                    <td>Telefones</td>
+                    <td>@cliente.DataCadastro.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
